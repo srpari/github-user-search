@@ -1,38 +1,190 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+:root {
+  --primary-color: #1d1c1c;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+  --radio-control-color: rebeccapurple;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+.container {
+  /* max-width: 1100px;
+  margin: auto; */
+  overflow: hidden;
+  padding: 0 2rem;
+    margin: 1rem auto;
+  max-width: 750px;
+}
+
+/*  Navbar  */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+
+
+.bg-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+
+/* Forms */
+input {
+  margin: 1.2rem 0;
+}
+
+
+
+.form-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--dark-color);
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+input[type='submit'],
+button {
+  font: inherit;
+}
+fieldset {
+  margin: 1rem auto;
+  max-width: 750px;
+}
+.searchFor {
+  margin: 1em;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.1;
+  display: flex;
+  gap: 0.5em;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  width: 1.15em;
+  height: 1.15em;
+  color: #000;
+  border: 0.15em solid #000;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--radio-control-color);
+  
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+/* controls */
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.2rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
+.search {
+  display: inline;
+  width: 100%;
+}
+
+.btn-dark{
+  background: var(--dark-color);
+  color: #fff;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-sm {
+  font-size: 0.8rem;
+  padding: 0.3rem 1rem;
+  margin-right: 0.2rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  text-align: center;
+  margin: 0.3rem;
+  background: var(--light-color);
+  color: #333;
+  border-radius: 5px;
+}
+
+
+/* CArds */
+
+.card {
+  padding: 1rem;
+  border: #ccc 1px dotted;
+  margin: 0.7rem 0;
+}
+
+/* Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.text-center {
   text-align: center;
 }
+/* alert msg */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.alert{
+  font: 1rem;
+  color: var(--danger-color)
 }
