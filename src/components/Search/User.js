@@ -19,7 +19,6 @@ const User = ({ match }) => {
     followers,
     following,
     public_repos,
-    watchers_count,
   } = context.user;
 
 
