@@ -29,7 +29,7 @@ const User = ({ match }) => {
       <Link to="/" className="btn btn-light">
         Back To Search
       </Link>
-      <div className="card grid-1">
+      <div className="card text-center">
         <div className="all-center">
           <img src={avatar_url} alt="avatar" className="round-img" style={{ width: '150px' }} />
           <h1>{name}</h1>
@@ -37,7 +37,7 @@ const User = ({ match }) => {
         <div>
           {bio && (
             <>
-              <h3>Bio</h3>
+              {/* <h3>Bio</h3> */}
               <p>{bio}</p>
             </>
           )}
@@ -46,7 +46,7 @@ const User = ({ match }) => {
             <span className="badge">Following: {following}</span>
             <span className="badge">Public Repos: {public_repos}</span>
           </div>
-          <a href={html_url} className="btn btn-dark my-1">Visit Github Profile</a>
+          <a href={html_url} className="text-center btn btn-dark my-1">Visit Github Profile</a>
 
         </div>
       </div>

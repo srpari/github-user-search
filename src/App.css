@@ -30,6 +30,7 @@ body {
   padding: 0 2rem;
     margin: 1rem auto;
   max-width: 750px;
+  display: grid;
 }
 
 /*  Navbar  */
@@ -170,10 +171,11 @@ input[type="radio"]:checked::before {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  /* display: flex; */
 }
 
 /* Grid */
-.grid-2 {
+.grid-1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
@@ -187,4 +189,18 @@ input[type="radio"]:checked::before {
 .alert{
   font: 1rem;
   color: var(--danger-color)
+}
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+  
+  .grid-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    display: block;
+    text-align: center;
+  }
+
 }

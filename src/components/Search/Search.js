@@ -1,16 +1,24 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Context from '../../context/Context';
 import NotFound from '../pages/NotFound';
 
+
 export default function Search() {
 
-    const [text, setText] = useState('');
+
+    const [text, setText] = useState(localStorage.getItem('textValue') || '');
     const [searchType, setSearchType] = useState('org');
     const [chkInput, setChkInput] = useState(false);
 
     const gc = useContext(Context);
 
+    useEffect(() => {
+        localStorage.setItem('textValue', text);
+    }, [text]);
+
     const onChange = e => {
+        e.preventDefault();
+        // setText(inputRef.current.value)
         setText(e.target.value);
         setChkInput(false);
         gc.userClear();
@@ -24,7 +32,7 @@ export default function Search() {
             return;
         }
         gc.searchUsers(searchType, text);
-        setText('');
+        // setText('');
     }
 
     const onClick = (e) => {
